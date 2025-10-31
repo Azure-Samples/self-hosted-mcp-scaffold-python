@@ -18,8 +18,8 @@ Currently, your server must satisfy the requirements below for remote hosting on
 ## How to use this scaffold 
 1. Inside the MCP server project, run `azd init --template self-hosted-mcp-scaffold-python`. In theory, there shouldn't be any duplicates between files in the scaffold and your original project. Fix duplicates if any by following the prompts. 
 1. In `host.json`:
-  - Put the main Python script path as the value of `arguments`, e.g. `weather.py`
-  - Ensure the `port` value is the same as the one used by the MCP server
+    - Put the main Python script path as the value of `arguments`, e.g. `weather.py`
+    - Ensure the `port` value is the same as the one used by the MCP server
 1. Follow instructions for local server testing and deployment in the [main sample repo](https://github.com/Azure-Samples/mcp-sdk-functions-hosting-python/tree/main?tab=readme-ov-file#prerequisites). Ensure you satisfy the other specified prerequisites before testing and deploying. 
 
 ## Walk-through of components in scaffold 
