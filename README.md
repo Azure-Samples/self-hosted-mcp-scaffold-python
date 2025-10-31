@@ -2,7 +2,7 @@
 
 Azure Functions allows you remotely host servers built with the official MCP SDKs with no code changes. If you've already built a server with the Python MCP SDK, use this scaffold to quickly host the server remotely. The scaffold contains the required Azure Function artifacts, as well as Bicep files for automatic infrastructure provisioning and server deployment. [Bicep](https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep) is a domain-specific language that uses declarative syntax to deploy Azure resources.
 
-Follow instructions in the [mcp-sdk-functions-hosting-python repo](https://github.com/Azure-Samples/mcp-sdk-functions-hosting-python/tree/main?tab=readme-ov-file#prerequisites) to set up your MCP server project for deployment. 
+Follow instructions in the [mcp-sdk-functions-hosting-python repo](https://github.com/Azure-Samples/mcp-sdk-functions-hosting-python/tree/main?tab=readme-ov-file#prerequisites) to leverage this scaffold for hosting remote MCP servers. 
 
 >[!NOTE]
 >The hosting capability is currently in **early preview**. 
