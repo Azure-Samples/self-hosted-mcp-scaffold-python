@@ -16,8 +16,6 @@ The repo has the following main components:
 ### host.json
 This file is required by Azure Functions for deployment. It's used by the Azure Functions host to configure the right settings (through the configuration profile) for the MCP server to run. It also tells the host how to run the server and which port to listen to. 
 
-The default authorization level is `function`, which would require clients to pass an access key when connecting to the server. However, because we'll use a feature called Easy Auth, which provides an authorization flow with identity providers like Microsoft Entra ID, there's no need to require a key as well for server connection. 
-
 ```json
 {
    "version": "2.0",
@@ -30,10 +28,14 @@ The default authorization level is `function`, which would require clients to pa
         "http": {
             "DefaultAuthorizationLevel": "anonymous"
         },
-        "port": "8000"
+        "port": "<MCP server port>"
     }
 }
 ```
+
+We'll configure the server to use a built-in authentication and authorization feature, so we disable Azure Functions host-based authentication and allow anonymous access.
+
+The built-in feature implements the requirements of the [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) protocol, such as issuing 401 challenge and hosting the Protected Resource Metadata (PRM). When the feature is enabled, clients attempting to access the server would be redirected to identity providers like Microsoft Entra ID for authentication before connecting. 
 
 ### local.settings.json
 This file is required only if you want to run the server locally with Azure Functions Core Tools, which provides a local version of the Azure Functions host. It allows you to run your server locally as if it's run in the Azure Functions environment in the cloud. 
